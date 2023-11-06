@@ -56,6 +56,7 @@ export default {
 
     .boolean-logo {
         width: 200px;
+                
     }
     .menu {
     display: flex;
