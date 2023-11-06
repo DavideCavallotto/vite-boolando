@@ -12,6 +12,7 @@ export default {
   },
   components: {
     AppHeaderPage,
+    AppMainPage,
     AppFooterPage
   },
   methods: {
@@ -23,7 +24,9 @@ export default {
 
 <template>
  <AppHeaderPage/>
+ <AppMainPage/>
  <AppFooterPage/>
+
 </template>
 
 <style lang="scss">
