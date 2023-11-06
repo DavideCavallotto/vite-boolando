@@ -3,7 +3,72 @@
 export default {
     data() {
         return {
-           
+            imgs: [
+                {
+                    imgFirst: '/img/1.webp',
+                    imgSecond: '/img/1b.webp',
+                    brand: 'Levi\'s',
+                    price: '14,99 €',
+                    oldPrice: '29,99 €',
+                    sustainable: 'sostenibilità',
+                    discountPrice: '50%',
+                    fit: 'Relaxed fit tee unisex'
+
+                },
+                {
+                    imgFirst: '/img/2.webp',  
+                    imgSecond: '/img/2b.webp',
+                    brand: 'Guess',
+                    price: '20,99 €',
+                    oldPrice: '29,99 €',
+                    sustainable: '',
+                    discountPrice: '30%',
+                    fit: 'Roses tee'
+                },
+                {
+                    imgFirst: '/img/3.webp',
+                    imgSecond: '/img/3b.webp',
+                    brand: 'Come Zucchero Filato',
+                    price: '129,99 €',
+                    oldPrice: '184,99 €',
+                    sustainable: '',
+                    discountPrice: '30%',
+                    fit: 'Voglia di colori pastello'
+                },
+                {
+                    imgFirst: '/img/4.webp',
+                    imgSecond: '/img/4b.webp',
+                    brand: 'Levi\'s',
+                    price: '14,99 €',
+                    oldPrice: '29,99 €',
+                    sustainable: 'sostenibilità',
+                    discountPrice: '50%',
+                    fit: 'Tee unisex'
+                },
+                {
+                    imgFirst: '/img/5.webp',
+                    imgSecond: '/img/5b.webp',
+                    brand: 'Maya Deluxe',
+                    price: '99,99 €',
+                    oldPrice: '',
+                    sustainable: '',
+                    discountPrice: '',
+                    fit: 'Stripe body'
+                },
+                {
+                    imgFirst: '/img/6.webp',
+                    imgSecond: '/img/6b.webp',
+                    brand: 'Esprit',
+                    price: '29,99 €',
+                    oldPrice: '',
+                    sustainable: 'sostenibilità',
+                    discountPrice: '',
+                    fit: 'Maglione black'
+                    
+                }               
+                                
+            ],            
+            
         }
     },
     methods: {
@@ -18,120 +83,26 @@ export default {
     <div class="main-section">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3" v-for="(item,index) in imgs">
                     <div class="card img-dimension">
                         <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/1.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/1b.webp" alt=""></figure>
+                            <figure class="img-dimension"><img class="img-dimension prima" :src="item.imgFirst" alt=""></figure>
+                            <figure class="img-dimension"><img class="img-dimension dopo" :src="item.imgSecond" alt=""></figure>
                             <span class="hearth">&hearts;</span>
                             <span class="hearth red-hearth">&hearts;</span>
-                            <p class="red-box">-50%</p>
-                            <p class="green-box">Sostenibilità</p>
+                            <p class="red-box">{{item.discountPrice}}</p>
+                            <p class="green-box">{{item.sustainable}}</p>
                         </div>
 
                         <div class="product-information">
-                            <p class="brand">Levi's</p>
-                            <p class="fit">Relaxed fit tee unisex</p>
-                            <p class="prize">14,99 $ <span class="old-prize">29,99 $</span></p>
+                            <p class="brand">{{ item.brand }}</p>
+                            <p class="fit">{{item.fit}}</p>
+                            <p class="prize">{{ item.price }} <span class="old-prize">{{item.oldPrice}}</span></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="card img-dimension">
-                        <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/2.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/2b.webp" alt=""></figure>
-                            <span class="hearth">&hearts;</span>
-                            <span class="hearth red-hearth">&hearts;</span>
-                            <p class="red-box">-30%</p>
-                            
-                        </div>
-
-                        <div class="product-information">
-                            <p class="brand">Guess</p>
-                            <p class="fit">roses tea</p>
-                            <p class="prize">20,99 $ <span class="old-prize">29,99 $</span></p>
-                        </div>                   
-                    </div>
-
-                </div>
-
-                <div class="col-3">
-                    <div class="card img-dimension">
-                        <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/3.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/3b.webp" alt=""></figure>
-                            <span class="hearth">&hearts;</span>
-                            <span class="hearth red-hearth">&hearts;</span>
-                            <p class="red-box">-30%</p> 
-                            
-                        </div>
-
-                        <div class="product-information">
-                            <p class="brand">Come Zucchero Filato</p>
-                            <p class="fit">voglia di colori pastello</p>
-                            <p class="prize">129,99 $ <span class="old-prize">184,99 $</span></p>
-                        </div>                                                
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card img-dimension">
-                        <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/4.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/4b.webp" alt=""></figure>                            
-                            <span class="hearth">&hearts;</span>
-                            <span class="hearth red-hearth">&hearts;</span>
-                            <p class="red-box">-50%</p>
-                            <p class="green-box">Sostenibilità</p>
-                            
-                        </div>
-
-                        <div class="product-information">
-                            <p class="brand">Levi's</p>
-                            <p class="fit">tee unisex</p>
-                            <p class="prize">14,99 $ <span class="old-prize">29,99 $</span></p>
-                        </div>                    
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card img-dimension">
-                        <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/5.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/5b.webp" alt=""></figure>                            
-                            <span class="hearth">&hearts;</span>
-                            <span class="hearth red-hearth">&hearts;</span> 
-                            
-                        </div>
-
-                        <div class="product-information">
-                            <p class="brand">Maya Deluxe</p>
-                            <p class="fit">Stripe bodies</p>
-                            <p class="prize">99,99 $</p>
-                        </div>                     
-                    </div>                                 
-                </div>
-
-                <div class="col-3">
-                    <div class="card img-dimension">
-                        <div class="card-figure">
-                            <figure class="img-dimension"><img class="img-dimension prima" src="/img/6.webp" alt=""></figure>
-                            <figure class="img-dimension"><img class="img-dimension dopo" src="/img/6b.webp" alt=""></figure>                            
-                            <span class="hearth">&hearts;</span>
-                            <span class="hearth red-hearth">&hearts;</span>                        
-                            <p class="green-box no-discount">Sostenibilità</p>
-                            
-                        </div>
-
-                        <div class="product-information">
-                            <p class="brand">Esprit</p>
-                            <p class="fit">Maglione black</p>
-                            <p class="prize">29,99 $</p>
-                        </div> 
-                    </div>                   
-                </div>                        
+                
             </div>                
             
         </div>
