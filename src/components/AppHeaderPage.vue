@@ -52,6 +52,10 @@ export default {
 
     .icons {
         color: white;
+
+        .e-code {
+        padding: 0 5px;
+    }
     }
 
     .boolean-logo {
@@ -65,6 +69,8 @@ export default {
         color: white;
         margin: 0 10px;
     }
+
+    
     
     }
 }
