@@ -22,7 +22,7 @@ export default {
         <div class="row-header">              
             
             <ul class="menu">
-                <li v-for="items in nav"><a href="#">{{ items }}</a></li>
+                <li v-for="item in nav"><a href="#">{{ item }}</a></li>
                   
 
             </ul>
@@ -31,7 +31,7 @@ export default {
                 <img src="/img/boolean-logo.png" alt="">
             </div>
             <div class="icons">
-                <span class="e-code">&#x1F45C;</span><span class="e-code">&#128100;</span><span class="e-code">&#10084;</span>
+                <span class="e-code"><font-awesome-icon :icon="['fas', 'basket-shopping']" /></span><span class="e-code"><font-awesome-icon :icon="['fas', 'user']" /></span><span class="e-code"><font-awesome-icon :icon="['fas', 'heart']" /></span>
             </div>               
 
         </div>
@@ -74,3 +74,5 @@ export default {
 
 
 </style>
+
+
