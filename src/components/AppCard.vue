@@ -24,21 +24,28 @@ export default {
 <div class="col-3">
     <div class="card img-dimension">
         <div class="card-figure">
-            <figure class="img-dimension"><img class="img-dimension prima" :src="/img/ + card.frontImage" alt=""></figure>
-            <figure class="img-dimension"><img class="img-dimension dopo" :src="/img/ + card.backImage" alt=""></figure>
+            <figure class="img-dimension">
+                <img class="img-dimension prima" :src="/img/ + card.frontImage" alt="">
+            </figure>
+            <figure class="img-dimension">
+                <img class="img-dimension dopo" :src="/img/ + card.backImage" alt="">
+            </figure>
             <span class="hearth" :class="card.isInFavorites===false ? 'green-heart': true">&hearts;</span>
             <span class="hearth red-hearth">&hearts;</span>
             <div class="badges">
                 <p v-for="badge in card.badges" class="red-box" :class="badge.type==='tag' ? 'green-box' : 'Sostenibilità'">{{ badge.value }}</p>
-                <!-- <p class="red-box">ciao</p>
-                <p class="green-box">ciao</p> -->
+                
             </div>
         </div>
 
         <div class="product-information">
             <p class="brand">{{card.brand}}</p>
             <p class="fit">{{card.name}}</p>
-            <p class="prize">{{card.price}}<span class="old-prize"></span></p>
+            <p class="prize">
+                <span class="original-price">{{card.price}}</span>
+                                
+            </p>
+            
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 <script>
 import AppCard from './AppCard.vue'
-import boolandoJson from '../db.json';
+// import boolandoJson from '../db.json';
+import { store } from '../store'
+import axios from 'axios'
 
 export default {
     data() {
@@ -70,8 +72,8 @@ export default {
             //     }               
                                 
             // ],
-                       
-            infoCards: boolandoJson.products
+            store: store,           
+            // infoCards: boolandoJson.products
         }
     },    
     methods: {
@@ -80,9 +82,14 @@ export default {
     components: {
         AppCard
     },
-    // mounted() {
-    //     console.log(this.infoCard)
-    // }
+    created() {
+        axios.get('http://localhost:3000/products')
+        .then(res => {
+            const infoProducts = res.data
+            // console.log(infoProdutcs)
+            this.store.infoProducts = infoProducts
+        })
+    }
 }
 
 </script>
@@ -92,7 +99,7 @@ export default {
     <div class="main-section">
         <div class="container">
             <div class="row">
-                <AppCard v-for="infoCard in infoCards" :card="infoCard"/>
+                <AppCard v-for="infoCard in store.infoProducts" :card="infoCard"/>
                 
             </div>                
             
