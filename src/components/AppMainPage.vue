@@ -120,8 +120,11 @@ export default {
                 <div class="card">
                     <div>
                         {{ selectedInfo.brand }}
-                        
-                    </div>                              
+                    </div> 
+                    <div>
+                        <img class="img-product" :src="/img/ + selectedInfo.frontImage" alt="">
+
+                    </div>                             
                     <span @click="closeModal()">
                         <a href="#"><font-awesome-icon icon="fa-solid fa-circle-xmark" /></a>
                     </span>
@@ -173,6 +176,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.img-product {
+    width: 200px;
 }
 
 </style>
