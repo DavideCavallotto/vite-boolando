@@ -31,7 +31,9 @@ export default {
                 <img src="/img/boolean-logo.png" alt="">
             </div>
             <div class="icons">
-                <span class="e-code"><font-awesome-icon :icon="['fas', 'basket-shopping']" /></span><span class="e-code"><font-awesome-icon :icon="['fas', 'user']" /></span><span class="e-code"><font-awesome-icon :icon="['fas', 'heart']" /></span>
+                <span class="e-code"><font-awesome-icon :icon="['fas', 'basket-shopping']" /></span>
+                <span class="e-code"><font-awesome-icon :icon="['fas', 'user']" /></span>
+                <span class="e-code"><font-awesome-icon :icon="['fas', 'heart']" /></span>
             </div>               
 
         </div>

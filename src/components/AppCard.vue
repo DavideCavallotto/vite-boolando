@@ -10,10 +10,14 @@ export default {
     props: {
         card:Object
     },
-    
-    methods: {
+    computed: {
+        // brand() {
+        //     return this.card.brand
+        // },
 
-    },
+    }
+
+    
     
 }
 
@@ -26,6 +30,7 @@ export default {
         <div class="card-figure">
             <figure class="img-dimension">
                 <img class="img-dimension prima" :src="/img/ + card.frontImage" alt="">
+                <span class="icon-info" @click="$emit('show',card)"><a href="#"><font-awesome-icon icon="fa-solid fa-circle-info" /></a></span>
             </figure>
             <figure class="img-dimension">
                 <img class="img-dimension dopo" :src="/img/ + card.backImage" alt="">
@@ -143,5 +148,14 @@ export default {
 
 .green-heart {
     color: greenyellow;
+}
+
+.icon-info{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 888;
+    color: darkgray;
 }
 </style>

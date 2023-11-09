@@ -73,10 +73,23 @@ export default {
                                 
             // ],
             store: store,           
-            // infoCards: boolandoJson.products
+            // infoCards: boolandoJson.products,
+            open: false,
+            selectedInfo: {},
         }
     },    
     methods: {
+        openModal(card) {
+            this.selectedInfo = card
+            this.open = true
+        },
+        // showModal(information) {
+        //     this.selectedInfo = information
+        //     this.open = true
+        // },
+        closeModal() {
+            this.open = false
+        }
 
     },
     components: {
@@ -99,9 +112,22 @@ export default {
     <div class="main-section">
         <div class="container">
             <div class="row">
-                <AppCard v-for="infoCard in store.infoProducts" :card="infoCard"/>
+                <AppCard v-for="(infoCard,i) in store.infoProducts" :card="infoCard" @show="openModal"/>
                 
             </div>                
+            
+            <div v-if="open" class="modal">
+                <div class="card">
+                    <div>
+                        {{ selectedInfo.brand }}
+                        
+                    </div>                              
+                    <span @click="closeModal()">
+                        <a href="#"><font-awesome-icon icon="fa-solid fa-circle-xmark" /></a>
+                    </span>
+                </div>
+
+            </div>
             
         </div>
             
@@ -120,6 +146,33 @@ export default {
     gap: 20px;   
     flex-wrap: wrap;
     column-gap: 15px;    
+}
+
+.modal::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal .card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 </style>
